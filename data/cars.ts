@@ -38,7 +38,7 @@ export interface Car {
   colors: { name: string; hex: string; image?: string }[];
   interiorImages: string[];
   exteriorGallery: string[];
-  youtubeUrl: string; // 👈 TAMBAHAN
+  youtubeUrl: string;
 }
 
 export const allCars: Car[] = [
@@ -108,7 +108,7 @@ export const allCars: Car[] = [
       { name: 'Abu-abu', hex: '#808080' },
       { name: 'Biru', hex: '#1E3A5F' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/Qth4WEfOaUk?si=RA5RT6ScCB5kYPXq'
   },
@@ -187,7 +187,7 @@ export const allCars: Car[] = [
       { name: 'Optic White Matte', hex: '#F5F5F0' },
       { name: 'Gravity Gold Matte', hex: '#B8A88A' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/oMOFNU1YPgU?si=x93Du8Z02I8bhQVh'
   },
@@ -247,7 +247,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/Ap2um9HvDNQ?si=P5Wg8MRrRe84c_uS'
   },
@@ -306,7 +306,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/zbrALbCopKs?si=RGjONSTWywVuq_CF'
   },
@@ -371,7 +371,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/0Vrsk_c2iSw?si=4UppFVqcaFCIm8hA'
   },
@@ -448,7 +448,7 @@ export const allCars: Car[] = [
       { name: 'Abu-abu', hex: '#808080' },
       { name: 'Biru', hex: '#1E3A5F' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/kGeBg42C5rM?si=ul4xQoO1xT8CRYtd'
   },
@@ -517,7 +517,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/0Cs6bahAXMI?si=U9gTGjf7cKx_yFv8'
   },
@@ -579,7 +579,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/6tLCPIROJPc?si=u0EoSw2yZNZywsoz'
   },
@@ -640,7 +640,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/psxwb3e2vT8?si=5TvjYwqY4z3-kQuq'
   },
@@ -704,7 +704,7 @@ export const allCars: Car[] = [
       { name: 'Abu-abu', hex: '#808080' },
       { name: 'Biru', hex: '#1E3A5F' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/QWKzPG6dE_o?si=B2xZCz72WonIY_KF'
   },
@@ -763,7 +763,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/0B-dlhQwtLA?si=6043oxJZ7vP5H4Bl'
   },
@@ -825,7 +825,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Merah', hex: '#B22222' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/9RuYjW_il6M?si=5aVa7uRIggELHbco'
   },
@@ -896,7 +896,7 @@ export const allCars: Car[] = [
       { name: 'Biru', hex: '#1E3A5F' },
       { name: 'Creamy White Pearl', hex: '#F5F0E8' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/FW0OBtFiJvI?si=eJ08WPLUJP7yrmLG'
   },
@@ -958,7 +958,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Merah', hex: '#B22222' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/GYtrg-UVxwM?si=tYeXWwXoqbWaqB7p'
   },
@@ -1020,7 +1020,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: [],
+    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/-GesRbCPlLc?si=NHv7iOopWPcuqQT8'
   }
