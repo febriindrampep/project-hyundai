@@ -109,7 +109,7 @@ export const allCars: Car[] = [
       { name: 'Biru', hex: '#1E3A5F' }
     ],
     interiorImages: ['/images/hyundai/InteriorCaretenzX.avif',
-'/images/hyundai/StargazerCartenzXInterior2.avif','/images/hyundai/StargazerCartenzInterior2.avif'],
+'/images/hyundai/StargazerCartenzXInterior2.avif','/images/hyundai/StargazerCartenzInterior2.avif','/images/hyundai/StargazerCartenzInterior3.avif','/images/hyundai/StargazerCartenzInterior4.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/Qth4WEfOaUk?si=RA5RT6ScCB5kYPXq'
   },
