@@ -188,9 +188,9 @@ export const allCars: Car[] = [
       { name: 'Gravity Gold Matte', hex: '#B8A88A' }
     ],
     interiorImages: ['/images/hyundai/InteriorCaretenzX.avif', 
-  '/images/hyundai/StargazerCartenzXlnterior2.avif',
-  '/images/hyundai/StargazerCartenzXlnterior3.avif',
-  '/images/hyundai/StargazerCartenzXlnterior4.avif',],
+  '/images/hyundai/StargazerCartenzXInterior2.avif',
+  '/images/hyundai/StargazerCartenzXInterior3.avif',
+  '/images/hyundai/StargazerCartenzXInterior4.avif',],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/oMOFNU1YPgU?si=x93Du8Z02I8bhQVh'
   },
