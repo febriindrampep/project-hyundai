@@ -48,7 +48,7 @@ export default function ContactSection() {
               {/* Foto Profil */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-xl">
                 <Image
-                  src="/images/profile.jpg" // ← Ganti dengan path foto Anda
+                  src="/images/profile.jpg"
                   alt="Foto Profil Hyundai Puri"
                   fill
                   className="object-cover"
@@ -100,8 +100,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xs text-gray-400">Telepon</h4>
                   <p className="text-sm font-medium text-black dark:text-white">
-                    +62 21 1234 5678<br />
-                    +62 812 3456 7890
+                    +62 81295566559
                   </p>
                 </div>
               </div>
@@ -115,7 +114,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xs text-gray-400">Email</h4>
                   <p className="text-sm font-medium text-black dark:text-white">
-                    info@hyundaipuri.com
+                    antanajerry86@gmail.com
                   </p>
                 </div>
               </div>
@@ -129,12 +128,12 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xs text-gray-400">WhatsApp</h4>
                   <a
-                    href="https://wa.me/6281234567890?text=Halo%20Hyundai%20Puri%2C%20saya%20ingin%20bertanya%20tentang%20mobil."
+                    href="https://wa.me/6281295566559?text=Halo%20Hyundai%20Puri%2C%20saya%20ingin%20bertanya%20tentang%20mobil."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-medium text-green-600 hover:underline"
                   >
-                    +62 812 3456 7890
+                    +62 81295566559
                   </a>
                 </div>
               </div>
