@@ -20,9 +20,22 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    // Buat pesan untuk WhatsApp
+    const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Pesan:* ${formData.message}`;
+
+    // Nomor WhatsApp (ganti dengan nomor Anda)
+    const phoneNumber = '6281295566559'; // tanpa + dan tanpa spasi
+
+    // Redirect ke WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, '_blank');
+
+    // Tampilkan notifikasi sukses
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
+
+    // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
@@ -214,12 +227,12 @@ export default function ContactSection() {
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-blue-500/30"
               >
-                Kirim Pesan
+                Kirim Pesan via WhatsApp
               </button>
 
               {isSubmitted && (
                 <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 p-3 rounded-lg text-center text-sm">
-                  ✅ Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.
+                  ✅ Pesan Anda berhasil dikirim! Silakan lanjutkan ke WhatsApp.
                 </div>
               )}
             </form>
