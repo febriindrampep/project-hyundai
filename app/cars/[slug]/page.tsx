@@ -49,7 +49,7 @@ export default async function CarDetailPage({
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
         {/* Tombol Kembali */}
         <Link
-          href="/"
+          href="/cars"
           className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-8 group"
         >
           <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,14 +75,10 @@ export default async function CarDetailPage({
           </p>
         </div>
 
-        {/* ============================================= */}
-        {/* 👇 EMBED YOUTUBE - TAMBAHAN DI SINI */}
-        {/* ============================================= */}
+        {/* Video */}
         {videoId && (
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-black dark:text-white mb-6">
-            
-            </h2>
+            <h2 className="text-2xl font-bold text-black dark:text-white mb-6"></h2>
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-black">
               <iframe
                 className="absolute inset-0 w-full h-full"
@@ -179,26 +175,31 @@ export default async function CarDetailPage({
           </div>
         </div>
 
-        {/* Tombol Aksi */}
+        {/* Tombol Aksi - WhatsApp */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/test-drive"
+          <a
+            href={`https://wa.me/6281295566559?text=Halo%20Hyundai%20Puri%2C%20saya%20ingin%20test%20drive%20mobil%20${encodeURIComponent(car.name)}.%20Apakah%20bisa%20dijadwalkan%3F`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-xl transition duration-300 shadow-lg hover:shadow-blue-500/30 text-center flex items-center justify-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             Test Drive Sekarang
-          </Link>
-          <Link
-            href="/contact"
+          </a>
+
+          <a
+            href={`https://wa.me/6281295566559?text=Halo%20Hyundai%20Puri%2C%20saya%20tertarik%20dengan%20mobil%20${encodeURIComponent(car.name)}.%20Mohon%20info%20lebih%20lanjut%20(price%2C%20promo%2C%20dll).`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 text-black dark:text-white font-semibold py-4 px-8 rounded-xl transition duration-300 text-center flex items-center justify-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             Hubungi Dealer
-          </Link>
+          </a>
         </div>
       </div>
     </main>
