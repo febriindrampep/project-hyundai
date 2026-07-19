@@ -74,7 +74,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@myhyundaicar?si=KKPkzwjqnyccIEPb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-red-600 p-2 rounded-full transition duration-300"
@@ -85,7 +85,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@jerryantana?_r=1&_t=ZS-986bVbBeMVh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-black p-2 rounded-full transition duration-300"
