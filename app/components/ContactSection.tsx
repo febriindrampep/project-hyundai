@@ -21,28 +21,19 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Buat pesan untuk WhatsApp
     const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Pesan:* ${formData.message}`;
-
-    // Nomor WhatsApp (ganti dengan nomor Anda)
-    const phoneNumber = '6281295566559'; // tanpa + dan tanpa spasi
-
-    // Redirect ke WhatsApp
+    const phoneNumber = '6281295566559';
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, '_blank');
 
-    // Tampilkan notifikasi sukses
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
-
-    // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   return (
     <section id='ContactSection' className="py-16 md:py-24 px-4 md:px-8 bg-white dark:bg-zinc-900">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             Hubungi Kami
@@ -56,12 +47,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Bagian Kiri: Foto Profil + Info Kontak */}
           <div className="space-y-6">
-            {/* Kartu Profil */}
             <div className="bg-gray-50 dark:bg-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg text-center border border-gray-100 dark:border-zinc-700">
-              {/* Foto Profil */}
+              {/* 👇 PERBAIKAN DI SINI */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-xl">
                 <Image
-                  src="/public/images/hyundai/Profil.jpeg"
+                  src="/images/hyundai/Profil.jpeg"
                   alt="Foto Profil Hyundai Puri"
                   fill
                   className="object-cover"
@@ -86,8 +76,9 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Info Kontak */}
+            {/* Info Kontak - tetap sama */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Alamat */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,12 +89,12 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xs text-gray-400">Alamat</h4>
                   <p className="text-sm font-medium text-black dark:text-white">
-                    Jl. Puri Lkr. Luar, RT.1/RW.1, Kembangan Sel., Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610<br />
-                    
+                    Jl. Puri Lkr. Luar, RT.1/RW.1, Kembangan Sel., Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610
                   </p>
                 </div>
               </div>
 
+              {/* Telepon */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,6 +109,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
+              {/* Email */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,6 +124,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
+              {/* WhatsApp */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-green-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -153,7 +146,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Bagian Kanan: Form */}
+          {/* Bagian Kanan: Form - tetap sama */}
           <div className="bg-gray-50 dark:bg-zinc-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-700">
             <h3 className="text-xl font-bold text-black dark:text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">✉️</span> Kirim Pesan
