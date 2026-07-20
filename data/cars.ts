@@ -522,7 +522,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
+    interiorImages: ['/images/hyundai/NewPalisIn.avif','/images/hyundai/NewPalisIn2.avif','/images/hyundai/NewPalisIn3.avif','/images/hyundai/NewPalisIn4.avif','/images/hyundai/NewPalisIn5.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/0Cs6bahAXMI?si=U9gTGjf7cKx_yFv8'
   },
