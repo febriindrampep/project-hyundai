@@ -162,7 +162,7 @@ export default function Navbar() {
 
             {/* Tombol CTA Desktop */}
             <Link
-              href="/test-drive"
+              href="#ContactSection"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300 text-sm font-medium"
             >
               Test Drive
@@ -280,7 +280,7 @@ export default function Navbar() {
 
           {/* Tombol CTA Mobile */}
           <Link
-            href="/#ContactSection"
+            href="#ContactSection"
             className="block bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-center transition duration-300 font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
