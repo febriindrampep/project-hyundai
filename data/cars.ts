@@ -311,7 +311,7 @@ export const allCars: Car[] = [
       { name: 'Hitam', hex: '#1A1A1A' },
       { name: 'Abu-abu', hex: '#808080' }
     ],
-    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
+    interiorImages: ['/images/hyundai/StargazerInterior.avif','/images/hyundai/StargazerInterior2.avif','/images/hyundai/StargazerInterior3.avif','/images/hyundai/StargazerInterior4.avif','/images/hyundai/StargazerInterior5.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/zbrALbCopKs?si=RGjONSTWywVuq_CF'
   },
