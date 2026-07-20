@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -28,6 +28,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCarsDropdownOpen, setIsCarsDropdownOpen] = useState(false);
   const [isMobileCarsOpen, setIsMobileCarsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Cegah scroll saat mobile menu terbuka
   useEffect(() => {
@@ -41,6 +42,15 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Bersihkan timeout saat unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
     if (!isMobileMenuOpen) {
@@ -49,8 +59,21 @@ export default function Navbar() {
     }
   };
 
-  const handleMouseEnter = () => setIsCarsDropdownOpen(true);
-  const handleMouseLeave = () => setIsCarsDropdownOpen(false);
+  // ========== PERBAIKAN DROPDOWN DESKTOP ==========
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsCarsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsCarsDropdownOpen(false);
+    }, 150); // Delay 150ms agar tidak langsung hilang
+  };
+
   const toggleMobileCars = () => setIsMobileCarsOpen((prev) => !prev);
 
   // Helper untuk mengecek link aktif
@@ -78,7 +101,7 @@ export default function Navbar() {
               Home
             </Link>
 
-            {/* Dropdown Cars */}
+            {/* ========== DROPDOWN CARS (PERBAIKAN) ========== */}
             <div
               className="relative"
               onMouseEnter={handleMouseEnter}
@@ -107,8 +130,10 @@ export default function Navbar() {
 
               {isCarsDropdownOpen && (
                 <div
-                  className="absolute left-0 mt-2 w-56 bg-black border border-gray-700 rounded-md shadow-lg py-1 max-h-96 overflow-y-auto z-10"
+                  className="absolute left-0 mt-1 w-56 bg-black border border-gray-700 rounded-md shadow-lg py-1 max-h-96 overflow-y-auto z-10"
                   role="menu"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   {carModels.map((model) => (
                     <Link
