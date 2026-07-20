@@ -61,7 +61,7 @@ export default function ContactSection() {
               {/* Foto Profil */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-xl">
                 <Image
-                  src="/public/images/hyundai/profil.jpeg"
+                  src="/public/images/hyundai/Profil.jpeg"
                   alt="Foto Profil Hyundai Puri"
                   fill
                   className="object-cover"
