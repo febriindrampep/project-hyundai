@@ -3,37 +3,45 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { allCars } from '@/data/cars';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    car: '',
+    paymentMethod: '',
     message: '',
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Pesan:* ${formData.message}`;
+    const carDisplay = formData.car || 'Tidak disebutkan';
+    const paymentDisplay = formData.paymentMethod || 'Tidak disebutkan';
+
+    const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Mobil yang diminati:* ${carDisplay}%0A*Metode Pembayaran:* ${paymentDisplay}%0A*Pesan:* ${formData.message}`;
+
     const phoneNumber = '6281295566559';
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, '_blank');
 
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', car: '', paymentMethod: '', message: '' });
   };
 
   return (
     <section id='ContactSection' className="py-16 md:py-24 px-4 md:px-8 bg-white dark:bg-zinc-900">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             Hubungi Kami
@@ -47,8 +55,8 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Bagian Kiri: Foto Profil + Info Kontak */}
           <div className="space-y-6">
+            {/* Kartu Profil */}
             <div className="bg-gray-50 dark:bg-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg text-center border border-gray-100 dark:border-zinc-700">
-              {/* 👇 PERBAIKAN DI SINI */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-xl">
                 <Image
                   src="/images/hyundai/Profil.jpeg"
@@ -76,9 +84,8 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Info Kontak - tetap sama */}
+            {/* Info Kontak */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Alamat */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +101,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Telepon */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +115,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Email */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-blue-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +129,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <div className="bg-gray-50 dark:bg-zinc-800 p-4 rounded-xl shadow-sm flex items-start gap-3">
                 <div className="bg-green-600/10 p-2 rounded-full">
                   <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -146,7 +150,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Bagian Kanan: Form - tetap sama */}
+          {/* Bagian Kanan: Form */}
           <div className="bg-gray-50 dark:bg-zinc-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-700">
             <h3 className="text-xl font-bold text-black dark:text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">✉️</span> Kirim Pesan
@@ -198,6 +202,45 @@ export default function ContactSection() {
                   className="w-full px-4 py-2.5 border border-gray-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                   placeholder="+62 812 3456 7890"
                 />
+              </div>
+
+              {/* Dropdown Pilihan Mobil */}
+              <div>
+                <label htmlFor="car" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Mobil yang Diminati
+                </label>
+                <select
+                  id="car"
+                  name="car"
+                  value={formData.car}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2.5 border border-gray-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                >
+                  <option value="">Pilih Mobil</option>
+                  {allCars.map((car) => (
+                    <option key={car.slug} value={car.name}>
+                      {car.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Dropdown Metode Pembayaran */}
+              <div>
+                <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Metode Pembayaran
+                </label>
+                <select
+                  id="paymentMethod"
+                  name="paymentMethod"
+                  value={formData.paymentMethod}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2.5 border border-gray-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                >
+                  <option value="">Pilih Metode</option>
+                  <option value="Cash">Cash (Tunai)</option>
+                  <option value="Kredit">Kredit (Cicilan)</option>
+                </select>
               </div>
 
               <div>
