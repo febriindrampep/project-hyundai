@@ -98,8 +98,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-xs text-gray-400">Alamat</h4>
                   <p className="text-sm font-medium text-black dark:text-white">
-                    Jl. Hyundai Raya No. 123<br />
-                    Jakarta Selatan
+                    Jl. Puri Lkr. Luar, RT.1/RW.1, Kembangan Sel., Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610<br />
+                    
                   </p>
                 </div>
               </div>
