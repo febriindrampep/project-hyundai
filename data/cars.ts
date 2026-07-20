@@ -901,7 +901,7 @@ export const allCars: Car[] = [
       { name: 'Biru', hex: '#1E3A5F' },
       { name: 'Creamy White Pearl', hex: '#F5F0E8' }
     ],
-    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
+    interiorImages: ['/images/hyundai/CretaInterior.avif','/images/hyundai/CretaInterior2.avif','/images/hyundai/CretaInterior3.avif','/images/hyundai/CretaInterior4.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/FW0OBtFiJvI?si=eJ08WPLUJP7yrmLG'
   },
