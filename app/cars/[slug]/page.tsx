@@ -49,7 +49,7 @@ export default async function CarDetailPage({
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
         {/* Tombol Kembali */}
         <Link
-          href="/cars"
+          href="/"
           className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 mb-8 group"
         >
           <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
