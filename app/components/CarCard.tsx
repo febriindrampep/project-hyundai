@@ -58,9 +58,6 @@ export default function CarCard({ car, index }: CarCardProps) {
           >
             DETAIL
           </Link>
-          <button className="flex-1 px-4 py-2 bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 text-black dark:text-white text-sm font-medium rounded-lg transition duration-300">
-            GET QUOTE
-          </button>
         </div>
       </div>
     </div>
