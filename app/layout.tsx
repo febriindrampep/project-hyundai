@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 👈 TAMBAHKAN IMPORT FOOTER
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HYUNDAI Puri - Dealer Resmi Hyundai", // 👈 Ganti title
-  description: "Temukan berbagai pilihan mobil Hyundai terbaru dengan teknologi canggih dan desain futuristik.", // 👈 Ganti deskripsi
+  title: "HYUNDAI Puri - Dealer Resmi Hyundai",
+  description: "Temukan berbagai pilihan mobil Hyundai terbaru dengan teknologi canggih dan desain futuristik.",
+  // 👇 VERIFIKASI GOOGLE SEARCH CONSOLE (sudah disesuaikan)
+  verification: {
+    google: "oDgYeMk7sY_oOPKE6QpqGn8neDT1_NfdAoflPj8n0i4",
+  },
 };
 
 export default function RootLayout({
@@ -27,13 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="id" // 👈 Ganti ke bahasa Indonesia
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
-        <Footer /> {/* 👈 PASANG FOOTER DI SINI */}
+        <Footer />
       </body>
     </html>
   );
