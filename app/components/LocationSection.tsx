@@ -2,9 +2,12 @@
 'use client';
 
 export default function LocationSection() {
-  // Ganti dengan alamat showroom Anda
+  // Alamat showroom
   const address = 'Jl. Puri Lkr. Luar, RT.1/RW.1, Kembangan Sel., Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610';
-  const embedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.549984420835!2d106.7337219735598!3d-6.190917593796693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f70d9e01aaa3%3A0x1322917e01ee7a8b!2sHyundai%20Puri%20Official!5e0!3m2!1sid!2sid!4v1784521927134!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin';
+
+  // Embed Google Maps (dari link yang Anda berikan)
+  const embedUrl =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.549984420835!2d106.7337219735598!3d-6.190917593796693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f70d9e01aaa3%3A0x1322917e01ee7a8b!2sHyundai%20Puri%20Official!5e0!3m2!1sid!2sid!4v1784522869585!5m2!1sid!2sid';
 
   return (
     <section className="py-16 md:py-24 px-4 md:px-8 bg-gray-50 dark:bg-zinc-900">
@@ -33,8 +36,11 @@ export default function LocationSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-black dark:text-white">Alamat Showroom</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    {address}
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
+                    Jl. Puri Lkr. Luar, RT.1/RW.1,<br />
+                    Kembangan Sel., Kec. Kembangan,<br />
+                    Kota Jakarta Barat, Daerah Khusus<br />
+                    Ibukota Jakarta 11610
                   </p>
                 </div>
               </div>
@@ -56,6 +62,7 @@ export default function LocationSection() {
                 </div>
               </div>
             </div>
+          </div>
 
           {/* Google Maps - Kanan */}
           <div className="lg:col-span-2">
@@ -66,7 +73,7 @@ export default function LocationSection() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Lokasi Showroom Hyundai Puri"
               />
             </div>
