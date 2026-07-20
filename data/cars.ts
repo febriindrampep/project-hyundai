@@ -453,7 +453,7 @@ export const allCars: Car[] = [
       { name: 'Abu-abu', hex: '#808080' },
       { name: 'Biru', hex: '#1E3A5F' }
     ],
-    interiorImages: ['/images/hyundai/InteriorCaretenzX.avif'],
+    interiorImages: ['/images/hyundai/PalisadeIn.avif','/images/hyundai/PalisadeIn2.avif','/images/hyundai/PalisadeIn3.avif','/images/hyundai/PalisadeIn4.avif','/images/hyundai/PalisadeIn5.avif'],
     exteriorGallery: [],
     youtubeUrl: 'https://youtu.be/kGeBg42C5rM?si=ul4xQoO1xT8CRYtd'
   },
