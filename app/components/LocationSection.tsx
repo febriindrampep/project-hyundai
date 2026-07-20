@@ -57,20 +57,6 @@ export default function LocationSection() {
               </div>
             </div>
 
-            {/* Tombol Navigasi */}
-            <a
-              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.549984420835!2d106.7337219735598!3d-6.190917593796693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f70d9e01aaa3%3A0x1322917e01ee7a8b!2sHyundai%20Puri%20Official!5e0!3m2!1sid!2sid!4v1784521927134!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md hover:shadow-blue-500/30"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-              </svg>
-              Buka Navigasi
-            </a>
-          </div>
-
           {/* Google Maps - Kanan */}
           <div className="lg:col-span-2">
             <div className="relative w-full aspect-[4/3] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-zinc-700 bg-gray-200 dark:bg-zinc-800">
