@@ -255,7 +255,7 @@ export default function Navbar() {
 
           {/* Tombol CTA Mobile */}
           <Link
-            href="/test-drive"
+            href="/#ContactSection"
             className="block bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-center transition duration-300 font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
