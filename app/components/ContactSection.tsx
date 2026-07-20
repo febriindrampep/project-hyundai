@@ -10,6 +10,7 @@ export default function ContactSection() {
     name: '',
     email: '',
     phone: '',
+    address: '',          // 👈 TAMBAHKAN ALAMAT
     car: '',
     paymentMethod: '',
     message: '',
@@ -27,7 +28,7 @@ export default function ContactSection() {
     const carDisplay = formData.car || 'Tidak disebutkan';
     const paymentDisplay = formData.paymentMethod || 'Tidak disebutkan';
 
-    const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Mobil yang diminati:* ${carDisplay}%0A*Metode Pembayaran:* ${paymentDisplay}%0A*Pesan:* ${formData.message}`;
+    const message = `Halo Hyundai Puri!%0A%0A*Nama:* ${formData.name}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.phone || 'Tidak diisi'}%0A*Alamat:* ${formData.address || 'Tidak diisi'}%0A*Mobil yang diminati:* ${carDisplay}%0A*Metode Pembayaran:* ${paymentDisplay}%0A*Pesan:* ${formData.message}`;
 
     const phoneNumber = '6281295566559';
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -35,7 +36,7 @@ export default function ContactSection() {
 
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', phone: '', car: '', paymentMethod: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', address: '', car: '', paymentMethod: '', message: '' });
   };
 
   return (
@@ -55,7 +56,6 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Bagian Kiri: Foto Profil + Info Kontak */}
           <div className="space-y-6">
-            {/* Kartu Profil */}
             <div className="bg-gray-50 dark:bg-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg text-center border border-gray-100 dark:border-zinc-700">
               <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-xl">
                 <Image
@@ -204,7 +204,23 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/* Dropdown Pilihan Mobil */}
+              {/* 👇 INPUT ALAMAT (BARU) */}
+              <div>
+                <label htmlFor="address" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Alamat Lengkap *
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border border-gray-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-900 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  placeholder="Jl. Raya No. 123, Jakarta"
+                />
+              </div>
+
               <div>
                 <label htmlFor="car" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Mobil yang Diminati
@@ -225,7 +241,6 @@ export default function ContactSection() {
                 </select>
               </div>
 
-              {/* Dropdown Metode Pembayaran */}
               <div>
                 <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Metode Pembayaran
